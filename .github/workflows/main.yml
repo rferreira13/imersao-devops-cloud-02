@@ -15,6 +15,7 @@ jobs:
         run: echo "Docker push"
 
   CD:
+    needs: [CI]
     runs-on: ubuntu-latest
     steps:
       - name: Conectar com o Kubernetes
