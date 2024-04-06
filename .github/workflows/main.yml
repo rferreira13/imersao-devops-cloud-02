@@ -9,8 +9,11 @@ jobs:
   CI:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4.1.2
+        name: Checkout do repositorio
       - name: Construção da imagem Docker
-        run: echo "Docker Build"
+        with:
+          context: ./src
       - name: "Publicar a imagem no Docker Hub"
         run: echo "Docker push"
 
